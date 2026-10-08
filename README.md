@@ -11,7 +11,19 @@ Personal developer portfolio website of **Kornipati Akash Babu**, a Computer Sci
 
 ## 🌐 Live Deployment
 
-🚀 **Production Website:** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)
+🚀 **Production URL:** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)  
+📦 **GitHub Repository:** [https://github.com/KornipatiAkash-1969/Portfolio](https://github.com/KornipatiAkash-1969/Portfolio)
+
+---
+
+## 📖 Description
+
+This project is a modern, high-performance personal developer portfolio built for **Kornipati Akash Babu**. It is engineered to highlight real-world full-stack development, database architecture, and machine learning competencies. 
+
+### Highlights & Background:
+- **Education:** B.Tech in Computer Science and Engineering from Hindustan Institute of Technology & Science (CGPA: 7.99), combined with NxtWave Intensive CCBP 4.0 MERN Full Stack program.
+- **Industry Experience:** Python Developer Intern at HDLC Technologies, Chennai, developing automated data processing pipelines using Pandas and NumPy.
+- **Design & Performance:** Built with modern CSS, sleek glassmorphism, responsive layouts, and interactive animations powered by Framer Motion.
 
 ---
 
@@ -21,8 +33,8 @@ Personal developer portfolio website of **Kornipati Akash Babu**, a Computer Sci
 - **About Section:** Detailed academic background from Hindustan Institute of Technology & Science (B.Tech CSE, CGPA: 7.99), technical journey, and career goals.
 - **Education Timeline:** Highlights degrees and programs, including NxtWave CCBP 4.0 MERN program, B.Tech CSE, Intermediate, and Secondary School Education with CGPAs.
 - **Featured Projects:**
-  - **Student Result Management System:** Full-stack app with React JS, Node JS, Express JS, and SQLite with role-based logins.
-  - **Emotion Detection System:** Multi-modal machine learning pipeline in Python using OpenCV, TensorFlow, and Keras.
+  - **Student Result Management System:** Full-stack app with React JS, Node JS, Express JS, and SQLite with role-based logins for students, teachers, and coordinators.
+  - **Emotion Detection System:** Multi-modal machine learning pipeline in Python using OpenCV, TensorFlow, and Keras for image, video, and audio analysis.
   - **Fingerprint-Based Door Lock System:** Biometric hardware-software security access module using Arduino and embedded C.
 - **Interactive Skills Section:** Visual proficiencies across Frontend, Backend, Databases, Cloud & CS fundamentals, accompanied by soft skills and language proficiencies.
 - **Experience & Certifications:** Highlights industry internship at HDLC Technologies (Chennai) and verified credentials from NxtWave, Udemy, and AWS.
@@ -51,8 +63,8 @@ Personal developer portfolio website of **Kornipati Akash Babu**, a Computer Sci
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/KornipatiAkash-1969/portfolio.git
-   cd portfolio
+   git clone https://github.com/KornipatiAkash-1969/Portfolio.git
+   cd Portfolio
    ```
 
 2. **Install dependencies:**
@@ -85,4 +97,4 @@ Personal developer portfolio website of **Kornipati Akash Babu**, a Computer Sci
 
 ## 📄 License
 
-This project is licensed under the MIT License - feel free to use and adapt it for your own portfolio.
+This project is open-source and available under the [MIT License](LICENSE).

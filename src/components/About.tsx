@@ -78,7 +78,7 @@ export default function About() {
               
               <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-50">
                 <img 
-                  src="/profile.jpg"  
+                  src="./profile.jpg"  
                   alt="Kornipati Akash Babu" 
                   className="w-full h-80 sm:h-96 object-cover object-top hover:scale-105 transition-transform duration-500"
                 />

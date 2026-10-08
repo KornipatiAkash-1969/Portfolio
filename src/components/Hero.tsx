@@ -99,7 +99,7 @@ export default function Hero() {
               {/* Image Container */}
               <div className="relative w-60 h-72 sm:w-72 sm:h-88 md:w-80 md:h-96 rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-indigo-50 to-slate-100">
                 <img 
-                  src="/profile.jpg" 
+                  src="./profile.jpg" 
                   alt="Kornipati Akash Babu" 
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />

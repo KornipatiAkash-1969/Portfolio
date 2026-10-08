@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle, Loader2, AlertCircle } from 'lucide-react';
 
-// Formspree Form ID: can be configured here or via VITE_FORMSPREE_ID in your environment
-const FORMSPREE_FORM_ID = (import.meta.env.VITE_FORMSPREE_ID as string) || '';
+// Formspree Form ID from https://formspree.io/f/mrpeqlek
+const FORMSPREE_FORM_ID = (import.meta.env.VITE_FORMSPREE_ID as string) || 'mrpeqlek';
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -87,6 +87,7 @@ export default function Contact() {
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
+          _replyto: formState.email,
           phone: formState.phone || 'Not provided',
           subject: formState.subject || 'Portfolio Inquiry',
           message: formState.message,

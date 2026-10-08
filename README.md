@@ -1,6 +1,7 @@
 # Kornipati Akash Babu | Full Stack Developer Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-success?style=for-the-badge&logo=vercel)](https://portfolio-nine-ashy-38.vercel.app)
+[![Live Demo - Vercel](https://img.shields.io/badge/Live%20Demo-Vercel-success?style=for-the-badge&logo=vercel)](https://portfolio-nine-ashy-38.vercel.app)
+[![Live Demo - GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://kornipatiakash-1969.github.io/Portfolio/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.2-purple?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![CSS3](https://img.shields.io/badge/CSS3-Modern-1572B6?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -9,10 +10,11 @@ Personal developer portfolio website of **Kornipati Akash Babu**, a Computer Sci
 
 ---
 
-## 🌐 Live Deployment
+## 🌐 Live Deployments
 
-🚀 **Production URL:** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)  
-📦 **GitHub Repository:** [https://github.com/KornipatiAkash-1969/Portfolio](https://github.com/KornipatiAkash-1969/Portfolio)
+- 🚀 **Vercel Production:** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)  
+- 🐙 **GitHub Pages:** [https://kornipatiakash-1969.github.io/Portfolio/](https://kornipatiakash-1969.github.io/Portfolio/)  
+- 📦 **GitHub Repository:** [https://github.com/KornipatiAkash-1969/Portfolio](https://github.com/KornipatiAkash-1969/Portfolio)
 
 ---
 

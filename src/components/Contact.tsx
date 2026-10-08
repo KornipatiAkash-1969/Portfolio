@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle, Loader2, AlertCircle } from 'lucide-react';
+
+// Formspree Form ID: can be configured here or via VITE_FORMSPREE_ID in your environment
+const FORMSPREE_FORM_ID = (import.meta.env.VITE_FORMSPREE_ID as string) || '';
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -17,7 +20,9 @@ export default function Contact() {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -59,13 +64,38 @@ export default function Contact() {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    // If Formspree ID is set, submit to Formspree, otherwise fallback to FormSubmit directed to Akash's email
+    const endpoint = FORMSPREE_FORM_ID.trim()
+      ? `https://formspree.io/f/${FORMSPREE_FORM_ID.trim()}`
+      : 'https://formsubmit.co/ajax/akash.kornipati1969@gmail.com';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone || 'Not provided',
+          subject: formState.subject || 'Portfolio Inquiry',
+          message: formState.message,
+          _subject: `New Portfolio Message from ${formState.name}: ${formState.subject || 'Inquiry'}`,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
         setFormState({
           name: '',
           email: '',
@@ -73,7 +103,17 @@ export default function Contact() {
           message: '',
           phone: '',
         });
-      }, 4000);
+      } else {
+        const data = await response.json().catch(() => null);
+        const errorMsg =
+          (data && (data.error || (data.errors && data.errors[0]?.message))) ||
+          'Failed to send message. Please try again or email directly.';
+        setSubmitError(errorMsg);
+      }
+    } catch {
+      setSubmitError('Network error. Please try again or reach out directly at akash.kornipati1969@gmail.com.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -235,18 +275,34 @@ export default function Contact() {
           >
             <h3 className="text-xl font-bold text-gray-900 mb-1">Send a Message</h3>
             <p className="text-xs sm:text-sm text-gray-500 mb-6">
-              I usually reply within 24 hours.
+              Messages are delivered directly to my inbox. I usually reply within 24 hours.
             </p>
+
+            {submitError && (
+              <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-red-600" />
+                <div>
+                  <p className="font-semibold">Unable to send message</p>
+                  <p className="text-xs text-red-600 mt-0.5">{submitError}</p>
+                </div>
+              </div>
+            )}
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center bg-emerald-50/50 rounded-xl border border-emerald-100">
                 <div className="rounded-full bg-emerald-100 p-3 mb-4 text-emerald-600">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900">Thank You, {formState.name || 'Friend'}!</h4>
+                <h4 className="text-xl font-bold text-gray-900">Message Delivered Successfully!</h4>
                 <p className="mt-2 text-sm text-gray-600 max-w-sm">
-                  Your message has been received. I look forward to connecting with you soon!
+                  Thank you! Your inquiry has been sent to Akash's email. I will respond to you shortly.
                 </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="mt-6 px-5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors"
+                >
+                  Send Another Message
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
@@ -262,9 +318,10 @@ export default function Contact() {
                       placeholder="e.g. Rahul Sharma"
                       value={formState.name}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                       className={`w-full px-4 py-3 text-sm rounded-xl border ${
                         errors.name ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
-                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
+                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all disabled:opacity-60`}
                     />
                     {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
                   </div>
@@ -280,9 +337,10 @@ export default function Contact() {
                       placeholder="name@example.com"
                       value={formState.email}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                       className={`w-full px-4 py-3 text-sm rounded-xl border ${
                         errors.email ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
-                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
+                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all disabled:opacity-60`}
                     />
                     {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
                   </div>
@@ -300,7 +358,8 @@ export default function Contact() {
                       placeholder="+91 9876543210"
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all disabled:opacity-60"
                     />
                   </div>
                   
@@ -315,7 +374,8 @@ export default function Contact() {
                       placeholder="Role Opportunity / Project inquiry"
                       value={formState.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -331,9 +391,10 @@ export default function Contact() {
                     placeholder="Hello Akash, I would like to discuss..."
                     value={formState.message}
                     onChange={handleChange}
+                    disabled={isSubmitting}
                     className={`w-full px-4 py-3 text-sm rounded-xl border ${
                       errors.message ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
-                    } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
+                    } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all disabled:opacity-60`}
                   />
                   {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
                 </div>
@@ -341,10 +402,20 @@ export default function Contact() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Send Message to Akash</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Send Message to Akash</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

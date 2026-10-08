@@ -1,75 +1,170 @@
 import { motion } from 'framer-motion';
-
+import { Award, Briefcase, GraduationCap, Code2 } from 'lucide-react';
 
 export default function About() {
+  const highlights = [
+    {
+      icon: <GraduationCap className="w-5 h-5 text-indigo-600" />,
+      title: "B.Tech in CSE",
+      subtitle: "Hindustan Univ, Chennai (CGPA 7.99)"
+    },
+    {
+      icon: <Code2 className="w-5 h-5 text-indigo-600" />,
+      title: "Full Stack MERN",
+      subtitle: "NxtWave CCBP 4.0 Intensive"
+    },
+    {
+      icon: <Briefcase className="w-5 h-5 text-indigo-600" />,
+      title: "Python Intern",
+      subtitle: "HDLC Technologies, Chennai"
+    },
+    {
+      icon: <Award className="w-5 h-5 text-indigo-600" />,
+      title: "AWS Certified",
+      subtitle: "Cloud Practitioner Foundations"
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 md:py-28 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <motion.h2 
-            className="text-base text-indigo-600 font-semibold tracking-wide uppercase"
-            initial={{ opacity: 0, y: 20 }}
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold uppercase tracking-wider mb-3"
           >
             About Me
-          </motion.h2>
-          <motion.p 
-            className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl"
-            initial={{ opacity: 0, y: 20 }}
+          </motion.div>
+          
+          <motion.h2 
+            className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
             Passionate Developer & Problem Solver
-          </motion.p>
-        </div>
-        
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
-          {/* Image Column */}
-          <motion.div 
-            className="flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          </motion.h2>
+          
+          <motion.p 
+            className="mt-3 text-base sm:text-lg text-gray-600"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="w-full max-w-md h-96 relative">
-              <div className="absolute inset-0 bg-indigo-100 rounded-lg transform rotate-3"></div>
-              <img 
-                src="https://mocha-cdn.com/0197b20d-45fd-70ae-96cb-e4e9654fc80e/pick.2.jpg"  
-                alt="About Me" 
-                className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-md transform -rotate-3"
-              />
+            Bridging technical precision, robust engineering, and responsive user experiences.
+          </motion.p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          {/* Image Column */}
+          <motion.div 
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative w-full max-w-sm sm:max-w-md">
+              {/* Decorative background plate */}
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50 rounded-3xl transform -rotate-2"></div>
+              
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-50">
+                <img 
+                  src="/profile.jpg"  
+                  alt="Kornipati Akash Babu" 
+                  className="w-full h-80 sm:h-96 object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 sm:p-5 bg-white border-t border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900">Kornipati Akash Babu</h3>
+                  <p className="text-xs font-semibold text-indigo-600">Full Stack Web & Python Developer</p>
+                  <p className="text-xs text-gray-500 mt-1 flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Chirala, Andhra Pradesh • Open to Relocation / Remote
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
           
-          {/* Text Column */}
+          {/* Text and stats Column */}
           <motion.div 
-            className="flex flex-col justify-center"
-            initial={{ opacity: 0, x: 20 }}
+            className="lg:col-span-7 flex flex-col justify-center"
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Who Am I?</h3>
-            <p className="text-lg text-gray-600 mb-6">
-              I'm Gangadhar Reddy, a passionate and self-driven Full Stack Web Developer dedicated to building dynamic, responsive, and user-friendly web applications. My journey into tech started with curiosity, grew through consistent learning, and continues with every line of code I write.
-            </p>
-            
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">My Journey</h3>
-            <p className="text-lg text-gray-600 mb-6">
-             My journey into the world of web development began with a strong desire to create things that live on the internet. I was fascinated by how websites work and how technology connects people across the globe.
-              That curiosity led me to explore modern technologies and frameworks, and soon I found myself building interactive, responsive, and dynamic web applications.
-            </p>
-            
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Career Goals</h3>
-            <p className="text-lg text-gray-600">
-              I'm constantly learning and exploring new technologies to stay at the forefront of web development.
-              My goal is to leverage my technical expertise to build innovative solutions that make a positive impact on users' lives.
-            </p>
+            {/* Quick Stat Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
+              {highlights.map((item, idx) => (
+                <div key={idx} className="p-3.5 rounded-xl bg-gray-50/80 border border-gray-200/60 flex items-start gap-3 hover:bg-indigo-50/40 hover:border-indigo-200 transition-colors">
+                  <div className="p-2 rounded-lg bg-white shadow-xs">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-gray-900">{item.title}</h4>
+                    <p className="text-xs text-gray-600 font-medium">{item.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-6 text-gray-600 text-sm sm:text-base leading-relaxed">
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
+                  Who Am I?
+                </h3>
+                <p>
+                  I'm <strong className="text-gray-900">Kornipati Akash Babu</strong>, a Computer Science Engineering graduate with hands-on experience in full-stack development, modern databases, and machine learning. I enjoy transforming challenging specifications into clean, scalable, and responsive software solutions.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
+                  My Technical Journey
+                </h3>
+                <p>
+                  My engineering journey at Hindustan Institute of Technology & Science gave me strong foundations in Object-Oriented Programming (OOP), Database Management Systems (DBMS), and algorithms. I took that curiosity into building hands-on projects, from deep learning emotion recognizers to role-based result management systems, and solidified my backend and frontend expertise with the NxtWave CCBP 4.0 program and an internship at HDLC Technologies.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
+                  Core Philosophy & Goals
+                </h3>
+                <p>
+                  I prioritize clean architecture, clear API contracts, and user-centric frontend experiences. I am looking forward to collaborating with progressive software teams where I can contribute to high-impact web products and scalable backend services.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-4 items-center">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 shadow-sm transition-all"
+              >
+                Let's Connect
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 text-gray-700 text-sm font-semibold hover:bg-gray-200 transition-all"
+              >
+                Explore Projects
+              </a>
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>

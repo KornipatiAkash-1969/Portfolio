@@ -43,7 +43,7 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-indigo-600 selection:text-white" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Header />
       <main>
         

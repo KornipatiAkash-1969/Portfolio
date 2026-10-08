@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -8,7 +8,7 @@ export default function Contact() {
     email: '',
     subject: '',
     message: '',
-    PhoneNo: '',
+    phone: '',
   });
 
   const [errors, setErrors] = useState({
@@ -25,7 +25,6 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     });
 
-    // Clear error when user starts typing (only for fields that have errors)
     if (e.target.name in errors && errors[e.target.name as keyof typeof errors]) {
       setErrors({
         ...errors,
@@ -39,20 +38,20 @@ export default function Contact() {
     const newErrors = { name: '', email: '', message: '' };
 
     if (!formState.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Please provide your name';
       valid = false;
     }
 
     if (!formState.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Please provide your email address';
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(formState.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = 'Please enter a valid email address';
       valid = false;
     }
 
     if (!formState.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Please enter your message';
       valid = false;
     }
 
@@ -64,11 +63,7 @@ export default function Contact() {
     e.preventDefault();
 
     if (validateForm()) {
-      // In a real app, you would send the form data to a server here
-      console.log('Form submitted:', formState);
       setIsSubmitted(true);
-
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setFormState({
@@ -76,115 +71,155 @@ export default function Contact() {
           email: '',
           subject: '',
           message: '',
-          PhoneNo: '',
+          phone: '',
         });
-      }, 3000);
+      }, 4000);
     }
   };
 
   return (
-    <div id="contact" className="relative bg-gray-50 py-24">
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute right-0 top-0 w-80 h-80 -mt-20 -mr-20 bg-indigo-100 rounded-full opacity-20 blur-3xl" />
-        <div className="absolute left-0 bottom-0 w-80 h-80 -mb-20 -ml-20 bg-purple-100 rounded-full opacity-20 blur-3xl" />
+    <section id="contact" className="relative bg-slate-50/70 py-20 md:py-28 border-t border-gray-100 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute right-0 top-0 w-80 h-80 -mt-20 -mr-20 bg-indigo-100/60 rounded-full blur-3xl" />
+        <div className="absolute left-0 bottom-0 w-80 h-80 -mb-20 -ml-20 bg-purple-100/60 rounded-full blur-3xl" />
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <motion.h2 
-            className="text-base text-indigo-600 font-semibold tracking-wide uppercase"
-            initial={{ opacity: 0, y: 20 }}
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold uppercase tracking-wider mb-3"
           >
-            Contact Me
-          </motion.h2>
-          <motion.p 
-            className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl"
-            initial={{ opacity: 0, y: 20 }}
+            Get In Touch
+          </motion.div>
+          
+          <motion.h2 
+            className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Let's Work Together
-          </motion.p>
+            Let's Start a Conversation
+          </motion.h2>
+          
           <motion.p 
-            className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            className="mt-3 text-base sm:text-lg text-gray-600"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            I'm currently available for freelance work or full-time opportunities.
+            Have an open role, an exciting project, or want to connect? Reach out anytime!
           </motion.p>
         </div>
         
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-3">
-          {/* Contact Information */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* Contact Information Cards */}
           <motion.div 
-            className="lg:col-span-1 bg-white rounded-lg shadow-md p-8"
-            initial={{ opacity: 0, x: -20 }}
+            className="lg:col-span-5 bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 sm:p-8"
+            initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-medium text-gray-900 mb-6">Contact Information</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Direct Contact Information</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mb-8">
+              Feel free to call, email, or connect with me via social profiles.
+            </p>
+            
             <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <Mail className="h-6 w-6 text-indigo-600" />
-                </div>
-                <div className="ml-3 text-base text-gray-500">
-                  <p>gangadhar0553@gmail.com</p>
-                  <p className="mt-1">Always open to discuss </p>
-                </div>
-              </div>
               
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <Phone className="h-6 w-6 text-indigo-600" />
+              {/* Email */}
+              <a 
+                href="mailto:akash.kornipati1969@gmail.com" 
+                className="flex items-start gap-4 p-3 rounded-xl hover:bg-indigo-50/50 transition-colors group"
+              >
+                <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                  <Mail className="h-5 w-5" />
                 </div>
-                <div className="ml-3 text-base text-gray-500">
-                  <p>+91 7993144564</p>
-                  {/* <p className="mt-1">Mon-Fri from 9am to 6pm</p> */}
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Email Address</p>
+                  <p className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors break-all">
+                    akash.kornipati1969@gmail.com
+                  </p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <MapPin className="h-6 w-6 text-indigo-600" />
+              {/* Phone */}
+              <a 
+                href="tel:+919346077158" 
+                className="flex items-start gap-4 p-3 rounded-xl hover:bg-indigo-50/50 transition-colors group"
+              >
+                <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                  <Phone className="h-5 w-5" />
                 </div>
-                <div className="ml-3 text-base text-gray-500">
-                  <p>Hyderabad, Telangana</p>
-                  <p className="mt-1">India - 500072</p>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Phone / WhatsApp</p>
+                  <p className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    +91 9346077158
+                  </p>
+                </div>
+              </a>
+              
+              {/* Location */}
+              <div className="flex items-start gap-4 p-3 rounded-xl">
+                <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Location</p>
+                  <p className="text-sm font-bold text-gray-900">
+                    Chirala, Andhra Pradesh, India
+                  </p>
+                  <p className="text-xs text-gray-500 mt-0.5">Available for on-site & remote positions</p>
                 </div>    
               </div>
+
             </div>        
 
-            
-            <div className="mt-12">
-              <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Connect With Me</h4>
-              <div className="flex space-x-5">
-                <a href="https://www.linkedin.com/in/gangadhar-reddy-avuthu-936a57201/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors duration-300">
-                  <span className="sr-only">LinkedIn</span>
-                  <Linkedin className="h-6 w-6" />
+            {/* Social links block */}
+            <div className="mt-8 pt-8 border-t border-gray-100">
+              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+                Connect Directly
+              </h4>
+              
+              <div className="grid grid-cols-3 gap-3">
+                <a 
+                  href="https://linkedin.com/in/kornipati-akash-babu-285820275" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-50 hover:bg-indigo-50 hover:text-indigo-600 text-gray-700 transition-colors border border-gray-100"
+                >
+                  <Linkedin className="h-5 w-5 mb-1 text-indigo-600" />
+                  <span className="text-xs font-semibold">LinkedIn</span>
                 </a>
-                <a href="https://github.com/Gangadharreddy369" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors duration-300">
-                  <span className="sr-only">GitHub</span>
-                  <Github className="h-6 w-6" />
+
+                <a 
+                  href="https://github.com/KornipatiAkash-1969" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-50 hover:bg-gray-900 hover:text-white text-gray-700 transition-colors border border-gray-100"
+                >
+                  <Github className="h-5 w-5 mb-1" />
+                  <span className="text-xs font-semibold">GitHub</span>
                 </a>
-                 <a href="https://wa.me/+917993144564" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors duration-300">
-                  <span className="sr-only">WhatsApp</span>
-                    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
-    fill="currentColor"
-    className="h-6 w-6"
-  >
-    <path d="M16 .5A15.5 15.5 0 0 0 .5 16a15.4 15.4 0 0 0 2.2 7.9L.6 31.4l7.7-2a15.6 15.6 0 0 0 7.7 2c8.5 0 15.4-6.9 15.4-15.5S24.5.5 16 .5zm0 28.2a13.3 13.3 0 0 1-6.7-1.8l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A13.2 13.2 0 1 1 16 28.7zm7.4-9c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.7-.2-1 .2-.3.4-1.1 1.2-1.3 1.4-.2.2-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.9l.6-.7c.2-.2.3-.4.5-.7.2-.3.1-.5 0-.8s-1-2.4-1.4-3.2c-.4-.8-.8-.7-1.1-.7h-.9c-.3 0-.7.1-1 .4-.3.4-1.3 1.3-1.3 3.1 0 1.8 1.3 3.6 1.5 3.9.2.3 2.5 4 6.1 5.6.9.4 1.6.7 2.1.9.9.3 1.6.3 2.2.2.7-.1 2.3-1 2.6-1.9.3-.9.3-1.7.2-1.9-.2-.2-.5-.3-.9-.5z" />
-  </svg>
+
+                <a 
+                  href="https://wa.me/919346077158?text=Hello%20Akash,%20I%20saw%20your%20portfolio" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors border border-emerald-100"
+                >
+                  <MessageCircle className="h-5 w-5 mb-1 text-emerald-600" />
+                  <span className="text-xs font-semibold">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -192,111 +227,132 @@ export default function Contact() {
           
           {/* Contact Form */}
           <motion.div 
-            className="lg:col-span-2 bg-white rounded-lg shadow-md p-8"
-            initial={{ opacity: 0, x: 20 }}
+            className="lg:col-span-7 bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 sm:p-8"
+            initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
+            <h3 className="text-xl font-bold text-gray-900 mb-1">Send a Message</h3>
+            <p className="text-xs sm:text-sm text-gray-500 mb-6">
+              I usually reply within 24 hours.
+            </p>
+
             {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center h-full py-12">
-                <div className="rounded-full bg-green-100 p-3 mb-4">
-                  <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+              <div className="flex flex-col items-center justify-center py-12 text-center bg-emerald-50/50 rounded-xl border border-emerald-100">
+                <div className="rounded-full bg-emerald-100 p-3 mb-4 text-emerald-600">
+                  <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-medium text-gray-900">Thank you!</h3>
-                <p className="mt-2 text-gray-500">Your message has been sent successfully. I'll get back to you soon!</p>
+                <h4 className="text-xl font-bold text-gray-900">Thank You, {formState.name || 'Friend'}!</h4>
+                <p className="mt-2 text-sm text-gray-600 max-w-sm">
+                  Your message has been received. I look forward to connecting with you soon!
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name <span className="text-red-500">*</span>
-                  </label>
-                  <div className="mt-1">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                      Your Name <span className="text-red-500">*</span>
+                    </label>
                     <input
                       type="text"
                       name="name"
                       id="name"
+                      placeholder="e.g. Rahul Sharma"
                       value={formState.name}
                       onChange={handleChange}
-                      className={`py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md ${
-                        errors.name ? 'border-red-500' : ''
-                      }`}
+                      className={`w-full px-4 py-3 text-sm rounded-xl border ${
+                        errors.name ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
+                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
                     />
-                    {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+                    {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
                   </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <div className="mt-1">
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                      Your Email <span className="text-red-500">*</span>
+                    </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
+                      placeholder="name@example.com"
                       value={formState.email}
                       onChange={handleChange}
-                      className={`py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md ${
-                        errors.email ? 'border-red-500' : ''
-                      }`}
+                      className={`w-full px-4 py-3 text-sm rounded-xl border ${
+                        errors.email ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
+                      } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
                     />
-                    {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+                    {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
                   </div>
                 </div>
-                
-                <div className="sm:col-span-2">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                    Subject
-                  </label>
-                  <div className="mt-1">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="phone" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                      Phone Number (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      placeholder="+91 9876543210"
+                      value={formState.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="subject" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                      Subject
+                    </label>
                     <input
                       type="text"
                       name="subject"
                       id="subject"
+                      placeholder="Role Opportunity / Project inquiry"
                       value={formState.subject}
                       onChange={handleChange}
-                      className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="w-full px-4 py-3 text-sm rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                     />
                   </div>
                 </div>
-                
-                <div className="sm:col-span-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Message <span className="text-red-500">*</span>
+
+                <div>
+                  <label htmlFor="message" className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                    Your Message <span className="text-red-500">*</span>
                   </label>
-                  <div className="mt-1">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formState.message}
-                      onChange={handleChange}
-                      className={`py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md ${
-                        errors.message ? 'border-red-500' : ''
-                      }`}
-                    ></textarea>
-                    {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
-                  </div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Hello Akash, I would like to discuss..."
+                    value={formState.message}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 text-sm rounded-xl border ${
+                      errors.message ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50/50'
+                    } focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all`}
+                  />
+                  {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
                 </div>
-                
-                <div className="sm:col-span-2">
+
+                <div>
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200"
+                    className="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <Send className="h-5 w-5 mr-2" />
-                    Send Message
+                    <Send className="w-4 h-4" />
+                    <span>Send Message to Akash</span>
                   </button>
                 </div>
               </form>
             )}
           </motion.div>
+          
         </div>
       </div>
-    </div>
+    </section>
   );
 }

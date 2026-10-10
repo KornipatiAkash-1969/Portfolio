@@ -134,7 +134,7 @@ export default function About() {
                   Technical Foundation
                 </h3>
                 <p>
-                  Familiar with <strong className="text-gray-800">FastAPI, TensorFlow, Keras, OpenCV, and SQLite</strong>, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development. My academic curriculum at Hindustan Institute of Technology and Science (CGPA: 7.99) and hands-on industry internship at HDLC Technologies have equipped me to build robust, scalable architectures.
+                  Familiar with <strong className="text-gray-800">RESTful APIs, TensorFlow, Keras, OpenCV, and SQLite</strong>, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development. My academic curriculum at Hindustan Institute of Technology and Science (CGPA: 7.99) and hands-on industry internship at HDLC Technologies have equipped me to build robust, scalable architectures.
                 </p>
               </div>
 

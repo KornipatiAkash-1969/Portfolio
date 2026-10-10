@@ -33,7 +33,7 @@
 
 ## 👨‍💻 Professional Summary
 
-Computer Science and Engineering graduate with hands-on experience in **JavaScript, React.js, Node.js, Express.js, Python,** and **SQL**. Skilled in developing full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven applications. Familiar with **FastAPI, TensorFlow, Keras, OpenCV, and SQLite**, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development.
+Computer Science and Engineering graduate with hands-on experience in **JavaScript, React.js, Node.js, Express.js, Python,** and **SQL**. Skilled in developing full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven applications. Familiar with **RESTful APIs, TensorFlow, Keras, OpenCV, and SQLite**, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development.
 
 - 🎓 **B.Tech in Computer Science and Engineering:** Hindustan Institute of Technology and Science, Chennai (2020 – 2024, **CGPA: 7.99** / 10).
 - 🚀 **MERN Full Stack Program:** NxtWave CCBP 4.0 (2025 – 2026) — JavaScript, React.js, Node.js, Express.js, SQL, HTML, CSS.

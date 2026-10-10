@@ -77,7 +77,7 @@ export default function Hero() {
             {/* Tech pills */}
             <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-center lg:justify-start gap-2">
               <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-2">Core Tech:</span>
-              {['React.js', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'SQL', 'TensorFlow'].map((tag, i) => (
+              {['React.js', 'Node.js', 'Express.js', 'Python', 'REST APIs', 'SQL', 'TensorFlow'].map((tag, i) => (
                 <span key={i} className="text-xs px-2.5 py-1 bg-white border border-gray-200 text-gray-700 rounded-md font-medium shadow-xs">
                   {tag}
                 </span>

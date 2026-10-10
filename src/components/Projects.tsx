@@ -9,47 +9,46 @@ interface Project {
   highlights: string[];
   techStack: string[];
   githubLink: string;
-  demoLink?: string;
 }
 
 const projectsData: Project[] = [
   {
-    title: "Student Result Management System",
+    title: "Academic Performance Management System",
     category: "Full Stack Web Application",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "A robust full-stack academic records system engineered using React JS, Node JS, Express JS, and SQLite for educational institutions.",
+    description: "A comprehensive full-stack academic management application featuring role-based dashboards, automated marks processing, and grade monitoring.",
     highlights: [
-      "Role-based authentication & authorization for Students, Teachers, and Academic Coordinators",
-      "RESTful API endpoints for instant grade entry, automated calculations, and transcript retrieval",
-      "SQLite integration optimized for relational academic performance data"
+      "Developed a full-stack academic management application featuring role-based dashboards for teachers, students, and coordinators.",
+      "Implemented student and subject management, assessments, marks entry, grade tracking, and academic performance monitoring.",
+      "Built RESTful APIs and integrated SQLite to manage academic records, authentication, and role-based access."
     ],
-    techStack: ["React JS", "Node JS", "Express JS", "SQLite", "REST APIs", "CSS"],
+    techStack: ["React.js", "Node.js", "Express.js", "SQLite", "RESTful APIs", "Role-Based Auth"],
     githubLink: "https://github.com/KornipatiAkash-1969"
   },
   {
-    title: "Emotion Detection System – Image, Video, and Audio",
-    category: "Machine Learning & Computer Vision",
+    title: "Multimodal Emotion Recognition Platform",
+    category: "Machine Learning & AI Platform",
     image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "An advanced multi-modal emotion classification engine leveraging deep neural networks to process facial video frames and audio frequencies.",
+    description: "An advanced multimodal AI platform merging facial expression analysis with speech emotion recognition using neural networks and decision-level fusion.",
     highlights: [
-      "Multi-modal machine learning pipelines merging video frame analysis with audio waveform features",
-      "Real-time facial landmark detection using OpenCV coupled with TensorFlow/Keras neural models",
-      "Acoustic feature extraction for comprehensive multi-sensory emotional state prediction"
+      "Developed a multimodal platform combining facial expression analysis and speech emotion recognition to classify seven emotions.",
+      "Implemented a CNN-based facial emotion model and an MLP-based speech classifier using Librosa MFCC features.",
+      "Integrated FastAPI endpoints with a React dashboard to compare facial and vocal predictions using decision-level fusion."
     ],
-    techStack: ["Python", "OpenCV", "TensorFlow", "Keras", "NumPy", "Deep Learning"],
+    techStack: ["Python", "React.js", "FastAPI", "TensorFlow", "OpenCV", "Librosa", "Scikit-learn"],
     githubLink: "https://github.com/KornipatiAkash-1969"
   },
   {
-    title: "Fingerprint-Based Door Lock System",
-    category: "Embedded Systems & IoT Security",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "An automated biometric physical access security system built on Arduino microcontrollers and optical fingerprint recognition.",
+    title: "Travel Trip Web Application",
+    category: "Responsive Web Application",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "A responsive travel booking application featuring a multi-step booking wizard, cookie-based session authentication, and protected routing.",
     highlights: [
-      "Interfaced optical fingerprint sensor module to securely capture and match biometric templates",
-      "Engineered hardware-level authentication logic to control solenoids and lock relays in real-time",
-      "Failsafe anti-tamper security routines and LED/buzzer audio-visual status feedback"
+      "Developed a responsive travel booking application with a five-step wizard for trip details, dates, guests, and assistance.",
+      "Implemented authentication, protected routes, cookie-based session management, and login and logout functionality.",
+      "Built trip viewing and cancellation features with form validation, booking confirmation, and responsive layouts."
     ],
-    techStack: ["Arduino", "Embedded C", "Biometric Sensors", "Hardware Logic", "IoT"],
+    techStack: ["React.js", "JavaScript", "React Router", "CSS3", "Cookie Sessions", "Form Validation"],
     githubLink: "https://github.com/KornipatiAkash-1969"
   }
 ];
@@ -88,7 +87,7 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Real-world full-stack platforms, machine learning models, and embedded systems created by me.
+            Real-world full-stack platforms, machine learning architectures, and responsive web applications.
           </motion.p>
         </div>
         
@@ -108,7 +107,7 @@ export default function Projects() {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108 opacity-90 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 

@@ -13,24 +13,24 @@ interface EducationItem {
 
 const educationData: EducationItem[] = [
   {
-    degree: "NxtWave Intensive (CCBP 4.0) – MERN Full Stack Program",
-    institution: "NxtWave CCBP 4.0 Intensive",
-    location: "Online",
-    period: "2025 – 2026",
-    type: "Professional Certification & Training",
-    skillsOrFocus: "Python, HTML, CSS, Bootstrap, SQL, React JS, Node JS, Express JS, REST APIs"
-  },
-  {
-    degree: "Bachelor of Technology – Computer Science & Engineering",
+    degree: "B.Tech – Computer Science and Engineering",
     institution: "Hindustan Institute of Technology and Science",
     location: "Chennai, Tamil Nadu",
     period: "2020 – 2024",
     type: "Undergraduate Degree",
     grade: "CGPA: 7.99 / 10",
-    skillsOrFocus: "Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS, Computer Networks, Software Engineering"
+    skillsOrFocus: "Core CS, Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS, Computer Networks"
   },
   {
-    degree: "Intermediate (MPC)",
+    degree: "MERN Full Stack Program – NxtWave CCBP 4.0",
+    institution: "NxtWave CCBP 4.0",
+    location: "Online",
+    period: "2025 – 2026",
+    type: "Full Stack Specialization",
+    skillsOrFocus: "JavaScript, React.js, Node.js, Express.js, SQL, HTML, CSS, RESTful APIs"
+  },
+  {
+    degree: "Intermediate – MPC",
     institution: "Vignana Bharathi Junior College",
     location: "Chirala, Andhra Pradesh",
     period: "2018 – 2020",

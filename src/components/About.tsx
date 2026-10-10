@@ -121,20 +121,20 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
                   <span className="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
-                  Who Am I?
+                  Professional Summary
                 </h3>
                 <p>
-                  I'm <strong className="text-gray-900">Kornipati Akash Babu</strong>, a Computer Science Engineering graduate with hands-on experience in full-stack development, modern databases, and machine learning. I enjoy transforming challenging specifications into clean, scalable, and responsive software solutions.
+                  I'm <strong className="text-gray-900">Kornipati Akash Babu</strong>, a Computer Science and Engineering graduate with hands-on experience in <strong className="text-gray-800">JavaScript, React.js, Node.js, Express.js, Python,</strong> and <strong className="text-gray-800">SQL</strong>. Skilled in developing full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven applications.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
                   <span className="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
-                  My Technical Journey
+                  Technical Foundation
                 </h3>
                 <p>
-                  My engineering journey at Hindustan Institute of Technology & Science gave me strong foundations in Object-Oriented Programming (OOP), Database Management Systems (DBMS), and algorithms. I took that curiosity into building hands-on projects, from deep learning emotion recognizers to role-based result management systems, and solidified my backend and frontend expertise with the NxtWave CCBP 4.0 program and an internship at HDLC Technologies.
+                  Familiar with <strong className="text-gray-800">FastAPI, TensorFlow, Keras, OpenCV, and SQLite</strong>, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development. My academic curriculum at Hindustan Institute of Technology and Science (CGPA: 7.99) and hands-on industry internship at HDLC Technologies have equipped me to build robust, scalable architectures.
                 </p>
               </div>
 

@@ -12,10 +12,10 @@
 <p align="center">
   <b>Modern, High-Performance Personal Developer Portfolio & Project Showcase</b>
   <br />
-  Featuring responsive UI, dark glassmorphism styling, interactive project galleries, certified credentials, and an integrated contact form.
+  Computer Science and Engineering graduate with hands-on experience in JavaScript, React.js, Node.js, Express.js, Python, and SQL. Skilled in full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven systems.
 </p>
 
-[**Explore Live on Vercel**](https://portfolio-nine-ashy-38.vercel.app) • [**Explore Live on GitHub Pages**](https://kornipatiakash-1969.github.io/Portfolio/) • [**Report an Issue**](https://github.com/KornipatiAkash-1969/Portfolio/issues)
+[**Explore Live on Vercel**](https://portfolio-nine-ashy-38.vercel.app) • [**Explore Live on GitHub Pages**](https://kornipatiakash-1969.github.io/Portfolio/) • [**View GitHub Repository**](https://github.com/KornipatiAkash-1969/Portfolio)
 
 </div>
 
@@ -31,47 +31,63 @@
 
 ---
 
-## 👨‍💻 About Kornipati Akash Babu
+## 👨‍💻 Professional Summary
 
-I am a passionate **Full Stack Web Developer and Software Engineer** with strong problem-solving and software engineering capabilities across modern JavaScript/TypeScript and Python ecosystems.
+Computer Science and Engineering graduate with hands-on experience in **JavaScript, React.js, Node.js, Express.js, Python,** and **SQL**. Skilled in developing full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven applications. Familiar with **FastAPI, TensorFlow, Keras, OpenCV, and SQLite**, with a strong foundation in Object-Oriented Programming (OOP), DBMS, problem-solving, and responsive web development.
 
-- 🎓 **Education:** B.Tech in Computer Science and Engineering from **Hindustan Institute of Technology and Science** (CGPA: **7.99** / 10).
-- 🚀 **Specialized Training:** Graduate of **NxtWave CCBP 4.0 Intensive MERN Full Stack Academy**.
-- 💼 **Internship Experience:** Python Developer Intern at **HDLC Technologies, Chennai**, developing automated data cleaning and analytics pipelines using Pandas & NumPy.
-- 🎯 **Core Competencies:** React.js, Node.js, Express.js, Python, SQL, REST APIs, Git, Tailwind CSS, Machine Learning fundamentals.
-
----
-
-## ✨ Features & Highlights
-
-- **Hero Banner with Quick Actions:** Professional headshot portrait, status badge (*"Available for Full-time Roles & Projects"*), quick resume download, and instant contact buttons.
-- **Academic & Professional Journey:** Interactive timeline featuring degrees, CGPAs, intensive full-stack certifications, and hands-on internship experience.
-- **Featured Projects Portfolio:**
-  - 🎓 **Student Result Management System:** Full-stack portal engineered with React JS, Node JS, Express JS, and SQLite with role-based authentication (Student / Teacher / Coordinator).
-  - 🧠 **Emotion Detection System:** Multi-modal machine learning pipeline in Python utilizing OpenCV, TensorFlow, and Keras for real-time video, image, and voice emotion recognition.
-  - 🔒 **Fingerprint-Based Door Lock System:** Biometric hardware-software embedded security access controller using Arduino and C/C++.
-- **Interactive Technical Skills Matrix:** Detailed categorized proficiencies across Frontend, Backend, Databases, Tools & Cloud, with soft skills and languages.
-- **Working Formspree Contact Form:** Direct contact channel powered by Formspree (`mrpeqlek`) with instant email alerts.
-- **SEO & Google Search Optimized:** Pre-configured JSON-LD structured schema data (`Person` schema), OpenGraph tags, sitemap, and meta keywords for high discoverability when searching for **Kornipati Akash Babu**.
-- **Cross-Platform Responsive Design:** Fully optimized with glassmorphic cards, smooth scrolling, and mobile drawer navigation.
+- 🎓 **B.Tech in Computer Science and Engineering:** Hindustan Institute of Technology and Science, Chennai (2020 – 2024, **CGPA: 7.99** / 10).
+- 🚀 **MERN Full Stack Program:** NxtWave CCBP 4.0 (2025 – 2026) — JavaScript, React.js, Node.js, Express.js, SQL, HTML, CSS.
+- 💼 **Industry Internship:** Python Developer Intern at **HDLC Technologies, Chennai** (Apr 2023 – May 2023), automating data processing pipelines with Pandas & NumPy.
+- 📜 **Verified Certifications:**
+  - MERN Full Stack Development — NxtWave CCBP 4.0 (2026)
+  - Python Programming Certification — Udemy
+  - AWS Cloud Practitioner Training — EduBridge & AWS Skill Builder
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Featured Projects
 
-```
-Frontend:     React 19 • TypeScript • Tailwind CSS • Framer Motion • Lucide Icons
-Tooling:      Vite 6 • PostCSS • Autoprefixer • ESLint
-Forms:        Formspree API
-Deployment:   Vercel & GitHub Pages (`gh-pages`)
-```
+### 1. 🎓 Academic Performance Management System
+- **Tech Stack:** React.js, Node.js, Express.js, SQLite, RESTful APIs
+- Developed a full-stack academic management application featuring role-based dashboards for teachers, students, and coordinators.
+- Implemented student and subject management, assessments, marks entry, grade tracking, and academic performance monitoring.
+- Built RESTful APIs and integrated SQLite to manage academic records, authentication, and role-based access.
+
+### 2. 🧠 Multimodal Emotion Recognition Platform
+- **Tech Stack:** Python, React.js, FastAPI, TensorFlow, OpenCV, Librosa, Scikit-learn
+- Developed a multimodal platform combining facial expression analysis and speech emotion recognition to classify seven emotions.
+- Implemented a CNN-based facial emotion model and an MLP-based speech classifier using Librosa MFCC features.
+- Integrated FastAPI endpoints with a React dashboard to compare facial and vocal predictions using decision-level fusion.
+
+### 3. ✈️ Travel Trip Web Application
+- **Tech Stack:** React.js, JavaScript, React Router, CSS3, Cookie Auth, Protected Routes
+- Developed a responsive travel booking application with a five-step wizard for trip details, dates, guests, and assistance.
+- Implemented authentication, protected routes, cookie-based session management, and login and logout functionality.
+- Built trip viewing and cancellation features with form validation, booking confirmation, and responsive layouts.
+
+---
+
+## 🛠️ Technical Skills Matrix
+
+| Category | Skills & Technologies |
+| :--- | :--- |
+| **Programming Languages** | JavaScript, Python, SQL |
+| **Frontend Development** | React.js, React Router, HTML5, CSS3, Bootstrap |
+| **Backend Development** | Node.js, Express.js, FastAPI, RESTful APIs |
+| **Databases** | SQLite, MySQL |
+| **Machine Learning & Vision** | TensorFlow, Keras, OpenCV, Scikit-learn, Librosa |
+| **Authentication & Security** | JWT, Cookie-Based Sessions, Protected Routes |
+| **Developer Tools** | Git, GitHub, Visual Studio Code, Postman |
+| **Core Concepts** | OOP, DBMS, API Integration, Responsive Web Design |
+| **Soft Skills** | Communication, Teamwork, Problem-Solving, Adaptability, Time Management |
+| **Languages** | Telugu (Native), English (Fluent), Hindi (Basic) |
 
 ---
 
 ## 🚀 Getting Started Locally
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - `npm` or `yarn`
 
 ### Installation & Run
@@ -93,47 +109,31 @@ Deployment:   Vercel & GitHub Pages (`gh-pages`)
    ```
    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-4. **Create a production build:**
+4. **Build for production:**
    ```bash
    npm run build
    ```
 
-5. **Preview the production build locally:**
+5. **Deploy to GitHub Pages:**
    ```bash
-   npm run preview
+   npm run deploy
    ```
-
----
-
-## 🚢 Deployment Guide
-
-### Deploying to GitHub Pages
-This project is configured with `gh-pages` and Vite relative paths (`base: './'`).
-To publish updates directly to GitHub Pages:
-```bash
-npm run deploy
-```
-This command automatically executes `predeploy` (`npm run build`) and publishes the `dist` directory to the `gh-pages` branch on GitHub.
-
-### Deploying to Vercel
-1. Link your GitHub repository `KornipatiAkash-1969/Portfolio` in your [Vercel Dashboard](https://vercel.com).
-2. Set Build Command to `npm run build` and Output Directory to `dist`.
-3. Every push to `main` automatically triggers an instant production deployment.
 
 ---
 
 ## 📬 Contact & Connect
 
 - **Full Name:** Kornipati Akash Babu
+- **Location:** Chirala, Andhra Pradesh, India
 - **Email:** [akash.kornipati1969@gmail.com](mailto:akash.kornipati1969@gmail.com)
+- **Phone / WhatsApp:** [+91 9346077158](https://wa.me/919346077158)
 - **LinkedIn:** [linkedin.com/in/kornipati-akash-babu-285820275](https://linkedin.com/in/kornipati-akash-babu-285820275)
 - **GitHub:** [@KornipatiAkash-1969](https://github.com/KornipatiAkash-1969)
-- **WhatsApp / Phone:** [+91 9346077158](https://wa.me/919346077158)
-- **Portfolio (Vercel):** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)
-- **Portfolio (GitHub):** [https://kornipatiakash-1969.github.io/Portfolio/](https://kornipatiakash-1969.github.io/Portfolio/)
+- **Production (Vercel):** [https://portfolio-nine-ashy-38.vercel.app](https://portfolio-nine-ashy-38.vercel.app)
+- **Production (GitHub Pages):** [https://kornipatiakash-1969.github.io/Portfolio/](https://kornipatiakash-1969.github.io/Portfolio/)
 
 ---
 
 ## 📄 License
 
-This repository is licensed under the [MIT License](LICENSE). Feel free to explore, clone, and star ⭐ the repository!
+This repository is open-source and licensed under the [MIT License](LICENSE).

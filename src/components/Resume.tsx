@@ -8,33 +8,33 @@ const internshipData = {
   duration: "Apr 2023 – May 2023",
   type: "Industry Internship",
   responsibilities: [
-    "Developed and debugged Python scripts for data processing, file handling, and routine automation tasks.",
-    "Used Pandas and NumPy libraries for structured data manipulation, statistical analysis, and dataset preprocessing.",
-    "Performed rigorous debugging, manual testing, and documentation to improve code reliability, speed, and clean code standards."
+    "Developed and debugged Python scripts for data processing and automation tasks.",
+    "Used Pandas and NumPy for data manipulation, analysis, and preprocessing.",
+    "Performed testing, debugging, and documentation to improve code quality and reliability."
   ]
 };
 
 const certifications = [
   {
-    title: "CCBP Intensive Program – MERN Full Stack Development",
-    issuer: "NxtWave CCBP 4.0 Intensive",
+    title: "MERN Full Stack Development",
+    issuer: "NxtWave CCBP 4.0 (2026)",
     year: "2026",
     badge: "Full Stack MERN",
-    highlight: "Hands-on engineering curriculum covering React, Node.js, Express.js, SQL database design, REST APIs, and Python programming."
+    highlight: "Comprehensive full stack program covering JavaScript, React.js, Node.js, Express.js, SQL, HTML, and CSS."
   },
   {
     title: "Python Programming Certification",
     issuer: "Udemy",
     year: "Verified Course",
     badge: "Python Specialist",
-    highlight: "Core and advanced Python programming, Object-Oriented principles, functional programming, data handling, and algorithmic problem-solving."
+    highlight: "Core and advanced Python programming, OOP principles, data handling, and automated scripting."
   },
   {
-    title: "AWS Certified Cloud Practitioner",
+    title: "AWS Cloud Practitioner Training",
     issuer: "EduBridge & AWS Skill Builder",
-    year: "Cloud Fundamentals",
+    year: "Cloud Training",
     badge: "AWS Cloud",
-    highlight: "Fundamentals of AWS Cloud infrastructure, security protocols, IAM, compute services (EC2, Lambda), storage (S3), and network models."
+    highlight: "Core AWS cloud architectural principles, IAM, compute services, storage solutions, and cloud security basics."
   }
 ];
 

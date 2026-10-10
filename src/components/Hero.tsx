@@ -40,7 +40,7 @@ export default function Hero() {
             </h2>
             
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Computer Science Engineering graduate with hands-on expertise in <span className="font-semibold text-gray-800">Python, SQL, JavaScript, React JS, Node JS,</span> and <span className="font-semibold text-gray-800">Express JS</span>. Specialized in building high-performance web applications, RESTful microservices, and reliable software architectures.
+              Computer Science and Engineering graduate with hands-on experience in <span className="font-semibold text-gray-800">JavaScript, React.js, Node.js, Express.js, Python,</span> and <span className="font-semibold text-gray-800">SQL</span>. Skilled in developing full-stack web applications, RESTful APIs, role-based dashboards, authentication workflows, and database-driven applications.
             </p>
 
             {/* Location & education snippet */}
@@ -76,8 +76,8 @@ export default function Hero() {
 
             {/* Tech pills */}
             <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-2">Key Tech:</span>
-              {['React JS', 'Node JS', 'Express JS', 'Python', 'SQL', 'AWS'].map((tag, i) => (
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-2">Core Tech:</span>
+              {['React.js', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'SQL', 'TensorFlow'].map((tag, i) => (
                 <span key={i} className="text-xs px-2.5 py-1 bg-white border border-gray-200 text-gray-700 rounded-md font-medium shadow-xs">
                   {tag}
                 </span>
